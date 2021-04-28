@@ -1,0 +1,139 @@
+1.
+mikhail@mikhail-VirtualBox:~$ mkdir linux_lecture
+mikhail@mikhail-VirtualBox:~$ touch notes.txt
+2.
+mikhail@mikhail-VirtualBox:~$ cp notes.txt linux_lecture
+mikhail@mikhail-VirtualBox:~$ ls
+ linux_lecture     snap        Загрузки      Общедоступные
+ notes.txt         Видео       Изображения  'Рабочий стол'
+ PycharmProjects   Документы   Музыка        Шаблоны
+mikhail@mikhail-VirtualBox:~$ ls linux_lecture
+notes.txt
+3.
+mikhail@mikhail-VirtualBox:~$ ll
+итого 92
+drwxr-xr-x 19 mikhail mikhail 4096 апр 28 17:37  ./
+drwxr-xr-x  3 root    root    4096 апр 27 08:40  ../
+-rw-------  1 mikhail mikhail 1706 апр 28 17:36  .bash_history
+-rw-r--r--  1 mikhail mikhail  220 апр 27 08:40  .bash_logout
+-rw-r--r--  1 mikhail mikhail 3771 апр 27 08:40  .bashrc
+drwx------ 15 mikhail mikhail 4096 апр 28 10:53  .cache/
+drwx------ 16 mikhail mikhail 4096 апр 28 11:58  .config/
+drwx------  3 mikhail mikhail 4096 апр 27 09:12  .gnupg/
+drwxrwxr-x  4 mikhail mikhail 4096 апр 27 09:50  .java/
+drwxrwxr-x  2 mikhail mikhail 4096 апр 28 17:37  linux_lecture/
+drwx------  3 mikhail mikhail 4096 апр 27 09:11  .local/
+drwx------  5 mikhail mikhail 4096 апр 28 10:53  .mozilla/
+-rw-rw-r--  1 mikhail mikhail    0 апр 28 17:37  notes.txt
+-rw-r--r--  1 mikhail mikhail  807 апр 27 08:40  .profile
+drwxrwxr-x  3 mikhail mikhail 4096 апр 27 09:52  PycharmProjects/
+drwxr-xr-x  6 mikhail mikhail 4096 апр 28 11:48  snap/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Видео/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Документы/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Загрузки/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Изображения/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Музыка/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Общедоступные/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12 'Рабочий стол'/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Шаблоны/
+4.
+mikhail@mikhail-VirtualBox:~$ ll -lra
+итого 92
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Шаблоны/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12 'Рабочий стол'/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Общедоступные/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Музыка/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Изображения/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Загрузки/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Документы/
+drwxr-xr-x  2 mikhail mikhail 4096 апр 27 09:12  Видео/
+drwxr-xr-x  6 mikhail mikhail 4096 апр 28 11:48  snap/
+drwxrwxr-x  3 mikhail mikhail 4096 апр 27 09:52  PycharmProjects/
+-rw-r--r--  1 mikhail mikhail  807 апр 27 08:40  .profile
+-rw-rw-r--  1 mikhail mikhail    0 апр 28 17:37  notes.txt
+drwx------  5 mikhail mikhail 4096 апр 28 10:53  .mozilla/
+drwx------  3 mikhail mikhail 4096 апр 27 09:11  .local/
+drwxrwxr-x  2 mikhail mikhail 4096 апр 28 17:37  linux_lecture/
+drwxrwxr-x  4 mikhail mikhail 4096 апр 27 09:50  .java/
+drwx------  3 mikhail mikhail 4096 апр 27 09:12  .gnupg/
+drwx------ 16 mikhail mikhail 4096 апр 28 11:58  .config/
+drwx------ 15 mikhail mikhail 4096 апр 28 10:53  .cache/
+-rw-r--r--  1 mikhail mikhail 3771 апр 27 08:40  .bashrc
+-rw-r--r--  1 mikhail mikhail  220 апр 27 08:40  .bash_logout
+-rw-------  1 mikhail mikhail 1706 апр 28 17:36  .bash_history
+drwxr-xr-x  3 root    root    4096 апр 27 08:40  ../
+drwxr-xr-x 19 mikhail mikhail 4096 апр 28 17:37  ./
+5.
+mikhail@mikhail-VirtualBox:~$ mv notes.txt new_notes.txt
+mikhail@mikhail-VirtualBox:~$ ls
+ linux_lecture     snap        Загрузки      Общедоступные
+ new_notes.txt     Видео       Изображения  'Рабочий стол'
+ PycharmProjects   Документы   Музыка        Шаблоны
+6.
+mikhail@mikhail-VirtualBox:~$ rm new_notes.txt linux_lecture/notes.txt
+mikhail@mikhail-VirtualBox:~$ ls
+ linux_lecture     snap    Документы   Изображения   Общедоступные   Шаблоны
+ PycharmProjects   Видео   Загрузки    Музыка       'Рабочий стол'
+mikhail@mikhail-VirtualBox:~$ ls linux_lecture
+7.
+mikhail@mikhail-VirtualBox:~$ touch -m -t 202001010415 linux_lecture/homework.sh
+mikhail@mikhail-VirtualBox:~$ ll linux_lecture
+итого 8
+drwxrwxr-x  2 mikhail mikhail 4096 апр 28 17:39 ./
+drwxr-xr-x 19 mikhail mikhail 4096 апр 28 17:38 ../
+-rw-rw-r--  1 mikhail mikhail    0 янв  1  2020 homework.sh
+mikhail@mikhail-VirtualBox:~$ cd linux_lecture
+
+# Create hw.sh, hw1.sh, hw2.sh, hw1.txt under the linux_lecture directory
+mikhail@mikhail-VirtualBox:~/linux_lecture$ touch hw.sh hw1.sh hw2.sh hw1.txt
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ls
+homework.sh  hw1.sh  hw1.txt  hw2.sh  hw.sh
+8.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ll | grep \*.txt
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ls | grep -F .txt
+hw1.txt
+9.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ mkdir lecture_new
+mikhail@mikhail-VirtualBox:~/linux_lecture$ cp *.txt lecture_new
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ls lecture_new
+hw1.txt
+10.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ echo 'echo "linux_lecture"' > homework.sh
+11.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ cat homework.sh
+echo "linux_lecture"
+12.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ chmod 057 homework.sh
+mikhail@mikhail-VirtualBox:~/linux_lecture$ cat homework.sh
+cat: homework.sh: Отказано в доступе
+13.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ chmod 757 homework,sh
+chmod: невозможно получить доступ к 'homework,sh': Нет такого файла или каталога
+mikhail@mikhail-VirtualBox:~/linux_lecture$ chmod 757 homework.sh
+13a.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ cat homework.sh
+echo "linux_lecture"
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ./homework.sh
+linux_lecture
+14.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ subl homework.sh
+15.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ head -n 7 homework.sh
+1
+2
+3
+4
+5
+6
+7
+16.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ touch notes.sh
+mikhail@mikhail-VirtualBox:~/linux_lecture$ echo "ls" > notes.sh
+mikhail@mikhail-VirtualBox:~/linux_lecture$ cat notes.sh
+ls
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ./notes.sh
+bash: ./notes.sh: Отказано в доступе
+mikhail@mikhail-VirtualBox:~/linux_lecture$ chmod 757 notes.sh
+17.
+mikhail@mikhail-VirtualBox:~/linux_lecture$ ./notes.sh
+homework.sh  hw1.sh  hw1.txt  hw2.sh  hw.sh  lecture_new  notes.sh
