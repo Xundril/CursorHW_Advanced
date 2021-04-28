@@ -1,0 +1,72 @@
+  208  mkdir cursor_git
+  209  cd cursor_git
+  210  touch first.py
+  211  ls
+  212  git add first.py
+  213  git status
+  214  git add .
+  215  git status
+  216  git init
+  217  git add .
+  218  git status
+  219  clear
+  220  mkdir cursor_git
+  221  cd cursor_git
+  222  touch first.py
+  223  ls
+  224  git add first.py
+  225  git init
+  226  git commit -m 'Adding first.py'
+  227  git add first.py
+  228  git commit -m "Adding first.py"
+  229  clear
+  230  mkdir cursor_git
+  231  cd cursor_git
+  232  git init
+  233  touch first.py
+  234  ls
+  235  git add first.py
+  236  git status
+  237  git commit -m "Adding first.py"
+  238  git log
+  239  touch second.py
+  240  git add second.py
+  241  git commit -m "Adding second.py"
+  242  rm first.py
+  243  git add first.py
+  244  git commit -m "Removing first.py"
+  245  git log
+  246  git push
+  247  git remote add origin git@github.com:Xundril/Cursor_git.git
+  248  git push
+  249  git push --set-upstream origin master
+  250  git branch first
+  251  git checkout -b second
+  252  echo "print('Hello')" > second.py
+  253  git stash
+  254  git checkout first
+  255  git checkout second
+  256  git stash pop
+  257  git add .
+  258  git status
+  259  git commit -m "Changing second.py"
+  260  git push
+  261  git push --set-upstream origin second
+  262  git checkout first
+  263  echo 'print("Cursor")' > second.py
+  264  git add second.py
+  265  git status
+  266  git commit -m "Changing second.py"
+  267  git push origin first
+  268  git checkout master
+  269  git merge second
+  270  git merge first
+  271  git status
+  272  cat second.py
+  273  subl second.py
+  274  cat second.py
+  275  git add second.py
+  276  git status
+  277  git commit -m "Conflict resolved"
+  278  git push origin --all
+  279  history

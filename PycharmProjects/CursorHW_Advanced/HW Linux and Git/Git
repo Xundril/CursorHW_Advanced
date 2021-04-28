@@ -1,0 +1,242 @@
+1.
+mikhail@mikhail-VirtualBox:~$ mkdir cursor_git
+2.
+mikhail@mikhail-VirtualBox:~$ cd cursor_git
+mikhail@mikhail-VirtualBox:~/cursor_git$ git init
+Инициализирован пустой репозиторий Git в /home/mikhail/cursor_git/.git/
+3.
+mikhail@mikhail-VirtualBox:~/cursor_git$ touch first.py
+mikhail@mikhail-VirtualBox:~/cursor_git$ ls
+first.py
+4.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git add first.py
+mikhail@mikhail-VirtualBox:~/cursor_git$ git status
+На ветке master
+
+Еще нет коммитов
+
+Изменения, которые будут включены в коммит:
+  (используйте «git rm --cached <файл>…», чтобы убрать из индекса)
+	новый файл:    first.py
+
+5.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git commit -m "Adding first.py"
+[master (корневой коммит) 9ecffe3] Adding first.py
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 first.py
+6.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git log
+commit 9ecffe331b6e1f7289042c701a665843e71518e2 (HEAD -> master)
+Author: Mikhail <mikhail.chabanenko@gmail.com>
+Date:   Wed Apr 28 20:37:05 2021 +0300
+
+    Adding first.py
+7.
+mikhail@mikhail-VirtualBox:~/cursor_git$ touch second.py
+8.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git add second.py
+9.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git commit -m "Adding second.py"
+[master b34d7a1] Adding second.py
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 second.py
+10.
+mikhail@mikhail-VirtualBox:~/cursor_git$ rm first.py
+11.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git add first.py
+12.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git commit -m "Removing first.py"
+[master 0468d1a] Removing first.py
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 first.py
+13.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git log
+commit 0468d1a702c1eb279a421a12af8de872e788beb5 (HEAD -> master)
+Author: Mikhail <mikhail.chabanenko@gmail.com>
+Date:   Wed Apr 28 20:39:41 2021 +0300
+
+    Removing first.py
+
+commit b34d7a12e94df61d2a7bf37315457f5f80cd0cd8
+Author: Mikhail <mikhail.chabanenko@gmail.com>
+Date:   Wed Apr 28 20:38:01 2021 +0300
+
+    Adding second.py
+
+commit 9ecffe331b6e1f7289042c701a665843e71518e2
+Author: Mikhail <mikhail.chabanenko@gmail.com>
+Date:   Wed Apr 28 20:37:05 2021 +0300
+
+    Adding first.py
+14.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push
+fatal: Не настроена точка назначения для отправки.
+Либо укажите URL с помощью командной строки, либо настройте внешний репозиторий с помощью
+
+    git remote add <имя> <адрес>
+
+а затем отправьте изменения с помощью имени внешнего репозитория
+
+mikhail@mikhail-VirtualBox:~/cursor_git$ git remote add origin git@github.com:Xundril/Cursor_git.git
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push
+fatal: Текущая ветка master не имеет вышестоящей ветки.
+Чтобы отправить текущую ветку и установить внешнюю ветку как вышестоящую для этой ветки, используйте
+
+    git push --set-upstream origin master
+
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push --set-upstream origin master
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+Сжатие объектов: 100% (4/4), готово.
+Запись объектов: 100% (7/7), 648 bytes | 32.00 KiB/s, готово.
+Всего 7 (изменения 0), повторно использовано 0 (изменения 0)
+To github.com:Xundril/Cursor_git.git
+ * [new branch]      master -> master
+Ветка «master» отслеживает внешнюю ветку «master» из «origin».
+15.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git branch first
+16.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git checkout -b second
+Переключено на новую ветку «second»
+17.
+mikhail@mikhail-VirtualBox:~/cursor_git$ echo "print('Hello')" > second.py
+18.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git stash
+Рабочий каталог и состояние индекса сохранены WIP on second: 0468d1a Removing first.py
+mikhail@mikhail-VirtualBox:~/cursor_git$ git checkout first
+Переключено на ветку «first»
+19.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git checkout second
+Переключено на ветку «second»
+mikhail@mikhail-VirtualBox:~/cursor_git$ git stash pop
+На ветке second
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (use "git restore <file>..." to discard changes in working directory)
+	изменено:      second.py
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+Отброшено refs/stash@{0} (8eff8a50f80649a8295fe5c10529ceda175b7da3)
+20.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git add .
+mikhail@mikhail-VirtualBox:~/cursor_git$ git status
+На ветке second
+Изменения, которые будут включены в коммит:
+  (use "git restore --staged <file>..." to unstage)
+	изменено:      second.py
+
+21.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git commit -m "Changing second.py"
+[second 88fe56b] Changing second.py
+ 1 file changed, 1 insertion(+)
+22.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push
+fatal: Текущая ветка second не имеет вышестоящей ветки.
+Чтобы отправить текущую ветку и установить внешнюю ветку как вышестоящую для этой ветки, используйте
+
+    git push --set-upstream origin second
+
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push --set-upstream origin second
+Перечисление объектов: 5, готово.
+Подсчет объектов: 100% (5/5), готово.
+Запись объектов: 100% (3/3), 266 bytes | 266.00 KiB/s, готово.
+Всего 3 (изменения 0), повторно использовано 0 (изменения 0)
+remote:
+remote: Create a pull request for 'second' on GitHub by visiting:
+remote:      https://github.com/Xundril/Cursor_git/pull/new/second
+remote:
+To github.com:Xundril/Cursor_git.git
+ * [new branch]      second -> second
+Ветка «second» отслеживает внешнюю ветку «second» из «origin».
+23.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git checkout first
+Переключено на ветку «first»
+24.
+mikhail@mikhail-VirtualBox:~/cursor_git$ echo 'print("Cursor")' > second.py
+25.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git add second.py
+mikhail@mikhail-VirtualBox:~/cursor_git$ git status
+На ветке first
+Изменения, которые будут включены в коммит:
+  (use "git restore --staged <file>..." to unstage)
+	изменено:      second.py
+
+26.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git commit -m "Changing second.py"
+[first 8a2f7c4] Changing second.py
+ 1 file changed, 1 insertion(+)
+27.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push origin first
+Перечисление объектов: 5, готово.
+Подсчет объектов: 100% (5/5), готово.
+Запись объектов: 100% (3/3), 267 bytes | 267.00 KiB/s, готово.
+Всего 3 (изменения 0), повторно использовано 0 (изменения 0)
+remote:
+remote: Create a pull request for 'first' on GitHub by visiting:
+remote:      https://github.com/Xundril/Cursor_git/pull/new/first
+remote:
+To github.com:Xundril/Cursor_git.git
+ * [new branch]      first -> first
+28.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git checkout master
+Переключено на ветку «master»
+Ваша ветка обновлена в соответствии с «origin/master».
+29.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git merge second
+Обновление 0468d1a..88fe56b
+Fast-forward
+ second.py | 1 +
+ 1 file changed, 1 insertion(+)
+30.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git merge first
+Автослияние second.py
+КОНФЛИКТ (содержимое): Конфликт слияния в second.py
+Не удалось провести автоматическое слияние; исправьте конфликты и сделайте коммит результата.
+31*.
+mikhail@mikhail-VirtualBox:~/cursor_git$ git status
+На ветке master
+Ваша ветка опережает «origin/master» на 1 коммит.
+  (используйте «git push», чтобы опубликовать ваши локальные коммиты)
+
+У вас есть не слитые пути.
+  (разрешите конфликты, затем запустите «git commit»)
+  (используйте «git merge --abort», чтобы остановить операцию слияния)
+
+Не слитые пути:
+  (используйте «git add <файл>…», чтобы пометить разрешение конфликта)
+	оба изменены:   second.py
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+mikhail@mikhail-VirtualBox:~/cursor_git$ cat second.py
+<<<<<<< HEAD
+print('Hello')
+=======
+print("Cursor")
+>>>>>>> first
+mikhail@mikhail-VirtualBox:~/cursor_git$ subl second.py
+mikhail@mikhail-VirtualBox:~/cursor_git$ cat second.py
+print('Hello')
+print("Cursor")
+mikhail@mikhail-VirtualBox:~/cursor_git$ git add second.py
+mikhail@mikhail-VirtualBox:~/cursor_git$ git status
+На ветке master
+Ваша ветка опережает «origin/master» на 1 коммит.
+  (используйте «git push», чтобы опубликовать ваши локальные коммиты)
+
+Все конфликты исправлены, но вы все еще в процессе слияния.
+  (используйте «git commit», чтобы завершить слияние)
+
+Изменения, которые будут включены в коммит:
+	изменено:      second.py
+
+mikhail@mikhail-VirtualBox:~/cursor_git$ git commit -m "Conflict resolved"
+[master 4bfe8a3] Conflict resolved
+mikhail@mikhail-VirtualBox:~/cursor_git$ git push origin --all
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+Запись объектов: 100% (3/3), 303 bytes | 303.00 KiB/s, готово.
+Всего 3 (изменения 0), повторно использовано 0 (изменения 0)
+To github.com:Xundril/Cursor_git.git
+   0468d1a..4bfe8a3  master -> master
