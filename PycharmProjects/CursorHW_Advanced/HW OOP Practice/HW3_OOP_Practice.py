@@ -37,7 +37,7 @@ class Person(Human):
     def make_money(self):
         print(f"\t{self.own_money} dollars")
         self.own_money = self.own_money + self.salary
-        print(f'\tToday i have got my salary - {self.salary} dollars, so for now - {self.own_money} dollars')
+        print(f'\tToday I have got my salary - {self.salary} dollars, so for now - {self.own_money} dollars')
 
     def buy_house(self, house):
         if self.own_money < house.cost:
@@ -120,7 +120,7 @@ if __name__ == '__main__':
 # Output:
 # 32 years old man named John got his sevings: 25000 dollars - for buying a new house
 # 	25000 dollars
-# 	Today i have got my salary - 3000 dollars, so for now - 28000 dollars
+# 	Today I have got my salary - 3000 dollars, so for now - 28000 dollars
 # John work hard and get - 33000 dollars!
 # Mike provide a list of the houses (cost, area):
 # 45000, 100
