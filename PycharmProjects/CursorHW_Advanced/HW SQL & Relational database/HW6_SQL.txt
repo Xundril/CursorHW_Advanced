@@ -56,12 +56,12 @@ UNLOCK TABLES;
 
 -- Dump completed on 2021-05-20 21:18:16
 
-    Create additional table phones with fields:
+    1) Create additional table phones with fields:
         id, phone_name, company_id, user_id
 
 CREATE TABLE phones (id INT NOT NULL AUTO_INCREMENT, phone_name CHAR(255), company_id CHAR(255), user_id CHAR(255), PRIMARY KEY(id));
 
-    Create additional table phone_companies with fields:
+    2) Create additional table phone_companies with fields:
         id, name
 
 CREATE TABLE phone_companies (id INT NOT NULL AUTO_INCREMENT, name CHAR(255), PRIMARY KEY(id));
@@ -74,7 +74,7 @@ mysql> SHOW TABLES;
 | users              |
 +--------------------+
 
-     Write select and save it to file to get users is developers.
+     3) Write select and save it to file to get users is developers.
 
 mysql> SELECT * FROM users WHERE is_developer=1;
 +----+------------+-----------+---------------------------------------------------+--------------+----------------+
@@ -85,7 +85,7 @@ mysql> SELECT * FROM users WHERE is_developer=1;
 |  4 | Roman      | Bondar    | bla bla bla bla bla lb a bla bla bla bla bla bla1 |            1 | test@gmail.com |
 +----+------------+-----------+---------------------------------------------------+--------------+----------------+
 
-     Insert xiaomi, apple, samsung to companies.
+     4) Insert xiaomi, apple, samsung to companies.
 
 mysql> INSERT INTO phone_companies (id, name) VALUES (1, "Xiaomi"), (2, "Apple"), (3, "Samsung");
 mysql> SELECT * FROM phone_companies;
@@ -97,7 +97,7 @@ mysql> SELECT * FROM phone_companies;
 |  3 | Samsung |
 +----+---------+
 
-     Insert 3 phone (with any data) to phones.
+     5) Insert 3 phone (with any data) to phones.
 
 mysql> INSERT INTO phones (phone_name, company_id, user_id) VALUES ("Xiaomi Redmi Note 9", 1, 1), ("Apple XS", 2, 2), ("Samsung Galaxy S10", 3, 3);
 mysql> SELECT * FROM phones;
@@ -109,7 +109,7 @@ mysql> SELECT * FROM phones;
 |  3 | Samsung Galaxy S10  | 3          | 3       |
 +----+---------------------+------------+---------+
 
-     Write select and save it to file to get phones where company_id=XIAOMI COMPANY ID.
+     6) Write select and save it to file to get phones where company_id=XIAOMI COMPANY ID.
 send file dump of your database and file with your select and insert queries.
 
 mysql> SELECT * FROM phones WHERE company_id=1;
