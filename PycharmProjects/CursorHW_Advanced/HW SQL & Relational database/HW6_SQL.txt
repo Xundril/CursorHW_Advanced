@@ -128,3 +128,4 @@ mysql> SELECT * FROM users WHERE id IN (SELECT user_id FROM phones);
 |  1 | Liubomyr   | Luzhnyi   | bla bla bla bla bla lb a bla bla bla bla bla bla |            1 | test@gmail.com |
 |  3 | Vasyl      | Mykutko   | bla bla bla bla                                  |            1 | test@gmail.com |
 +----+------------+-----------+--------------------------------------------------+--------------+----------------+
+
